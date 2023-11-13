@@ -1,7 +1,7 @@
 import Login from "./pages/Login";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
-import Signup1 from "./pages/signup/step-1";
+import Signup1 from "./pages/signup/Signup1";
 import Signup2 from "./pages/signup/step-2";
 import Signup3 from "./pages/signup/step-3";
 import Signup4 from "./pages/signup/step-4";
