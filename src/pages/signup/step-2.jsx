@@ -1,4 +1,3 @@
-import React from "react";
 import Input from "../../components/Input";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";

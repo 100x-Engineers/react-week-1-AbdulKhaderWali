@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 const Input = ({ type, label, value, setValue, verified, ...args }) => {
 	const [showPassword, setShowPassword] = useState(true);
@@ -98,3 +99,11 @@ const Input = ({ type, label, value, setValue, verified, ...args }) => {
 };
 
 export default Input;
+
+Input.propTypes = {
+	type: PropTypes.oneOf(["text", "password", "search", "email"]),
+	label: PropTypes.string,
+	value: PropTypes.string,
+	setValue: PropTypes.elementType,
+	verified: PropTypes.bool,
+};

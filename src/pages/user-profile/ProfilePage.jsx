@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../../components/Button";
 import Tweet from "../../components/Tweet";
 // import user_background from "../../../public/user_background.png";

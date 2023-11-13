@@ -41,6 +41,7 @@ const LoginMain = () => {
 						size={"base"}
 						full={true}
 						version={"normal"}
+						onClick={() => alert("bittp click")}
 					>
 						Sign in
 					</Button>

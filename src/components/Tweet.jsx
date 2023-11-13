@@ -19,7 +19,7 @@ const Tweet = () => {
 								<span className='text-neutral-500'>15h</span>
 							</div>
 							<p className='text-neutral-50 text-16 font-regular'>
-								It's better to finish it today
+								{`It's better to finish it today`}
 							</p>
 						</div>
 						<div className='text-neutral-500 flex justify-between items-center py-3'>

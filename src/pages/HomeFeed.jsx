@@ -1,4 +1,3 @@
-import React from "react";
 import Tweet from "../components/Tweet";
 
 const HomeFeed = () => {
