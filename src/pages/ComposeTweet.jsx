@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Button from "../components/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 const ComposeTweet = () => {
 	const [tweet, setTweet] = useState("");
+	const navigate = useNavigate();
 	return (
 		<div className='bg-neutral-1000 text-neutral-50 font-inter w-full px-4 min-h-screen'>
 			<header className='py-3 w-full flex items-center justify-between'>
-				<a href='../home-feed/'>
+				<Link to={"/home"}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width={24}
@@ -29,12 +31,15 @@ const ComposeTweet = () => {
 							strokeLinejoin='round'
 						/>
 					</svg>
-				</a>
-				<a href='../home-feed/'>
-					<Button size={"base"} variant={"default-blue"} version={"normal"}>
-						Post
-					</Button>
-				</a>
+				</Link>
+				<Button
+					size={"base"}
+					variant={"default-blue"}
+					version={"normal"}
+					onClick={() => navigate("/home")}
+				>
+					Post
+				</Button>
 			</header>
 			<main>
 				<section className='py-2'>
