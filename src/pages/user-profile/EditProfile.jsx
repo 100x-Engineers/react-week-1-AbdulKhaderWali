@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
@@ -5,15 +6,15 @@ const EditProfile = () => {
 	return (
 		<div className='bg-neutral-1000 text-neutral-50 font-inter w-full px-4 min-h-screen'>
 			<header className='py-3 w-full flex items-center justify-between'>
-				<a href='./index.html' className='flex gap-5'>
+				<Link to={"/profile"} className='flex gap-5'>
 					<img src='/arrow-left.svg' alt='Arrow Left' />
 					<p>Edit profile</p>
-				</a>
-				<a href='./index.html'>
+				</Link>
+				<Link to={"/profile"}>
 					<Button variant={"default-white"} size={"base"} version={"normal"}>
 						Save
 					</Button>
-				</a>
+				</Link>
 			</header>
 			<section>
 				<div className='relative flex w-full'>

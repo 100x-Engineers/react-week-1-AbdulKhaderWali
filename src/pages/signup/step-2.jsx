@@ -2,14 +2,16 @@ import Input from "../../components/Input";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import Button from "../../components/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup2 = () => {
 	const { userData } = useContext(UserContext);
+	const navigate = useNavigate();
 	return (
 		<div className='bg-neutral-1000 text-neutral-50 px-4 font-inter w-full min-h-screen flex flex-col justify-between'>
 			<div>
 				<header className='flex gap-5 py-3 items-center'>
-					<a href='./create-account-step-1.html'>
+					<Link to={"/signup1"}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width={24}
@@ -32,7 +34,7 @@ const Signup2 = () => {
 								strokeLinejoin='round'
 							/>
 						</svg>
-					</a>
+					</Link>
 					<p className='leading-normal text-base font-bold'>Step 2 of 4</p>
 				</header>
 				<main className='flex flex-col gap-5 self-stretch justify-between'>
@@ -72,6 +74,7 @@ const Signup2 = () => {
 					size={"base"}
 					version={"fat"}
 					full={true}
+					onClick={() => navigate("/signup3")}
 				>
 					Sign Up
 				</Button>

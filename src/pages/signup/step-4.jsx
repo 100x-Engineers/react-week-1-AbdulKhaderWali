@@ -1,14 +1,16 @@
 import { useState } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup4 = () => {
 	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
 	return (
 		<div className='bg-neutral-1000 text-neutral-50 px-4 font-inter w-full min-h-screen flex flex-col justify-between'>
 			<div>
 				<header className='flex gap-5 py-3 items-center'>
-					<a href='./create-account-step-3.html'>
+					<Link to={"/signup3"}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width={24}
@@ -31,7 +33,7 @@ const Signup4 = () => {
 								strokeLinejoin='round'
 							/>
 						</svg>
-					</a>
+					</Link>
 					<p className='leading-normal text-base font-bold'>Step 4 of 4</p>
 				</header>
 				<main className='flex flex-col gap-10 self-stretch justify-between'>
@@ -61,6 +63,11 @@ const Signup4 = () => {
 					version={"normal"}
 					disabled={password.length < 8}
 					full={true}
+					onClick={() => {
+						if (password.length >= 8) {
+							navigate("/home");
+						}
+					}}
 				>
 					Next
 				</Button>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Tweet from "../../components/Tweet";
 // import user_background from "../../../public/user_background.png";
@@ -22,7 +23,7 @@ const ProfilePage = () => {
 						className='w-[68px] h-[68px] rounded-full absolute -top-9'
 					/>
 					<div>
-						<a href='./edit-profile.html' className='flex justify-end pt-2'>
+						<Link to={"/editprofile"} className='flex justify-end pt-2'>
 							<Button
 								variant={"outlined-white"}
 								size={"base"}
@@ -30,7 +31,7 @@ const ProfilePage = () => {
 							>
 								Edit profile
 							</Button>
-						</a>
+						</Link>
 					</div>
 				</section>
 			</header>
@@ -38,7 +39,7 @@ const ProfilePage = () => {
 			<footer className='fixed bottom-0 left-0 w-full'>
 				<div className='flex justify-end mb-9 items-center gap-1 mr-5'>
 					<div className='bg-blue-default p-4 rounded-full'>
-						<a href='../compose-tweet/'>
+						<Link to={"/tweet"}>
 							<svg
 								width='32'
 								height='32'
@@ -54,7 +55,7 @@ const ProfilePage = () => {
 									/>
 								</g>
 							</svg>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</footer>

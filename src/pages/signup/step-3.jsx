@@ -1,14 +1,16 @@
 import { useState } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup3 = () => {
 	const [value, setValue] = useState("");
+	const navigate = useNavigate();
 	return (
 		<div className='bg-neutral-1000 text-neutral-50 px-4 font-inter w-full min-h-screen flex flex-col justify-between'>
 			<div>
 				<header className='flex gap-5 py-3 items-center'>
-					<a href='./create-account-step-2.html'>
+					<Link to={"/signup2"}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width={24}
@@ -31,7 +33,7 @@ const Signup3 = () => {
 								strokeLinejoin='round'
 							/>
 						</svg>
-					</a>
+					</Link>
 					<p className='leading-normal text-base font-bold'>Step 3 of 4</p>
 				</header>
 				<main className='flex flex-col gap-10 self-stretch justify-between'>
@@ -66,6 +68,11 @@ const Signup3 = () => {
 					disabled={value.length < 6}
 					version={"normal"}
 					full={true}
+					onClick={() => {
+						if (value.length >= 6) {
+							navigate("/signup4");
+						}
+					}}
 				>
 					Next
 				</Button>

@@ -1,6 +1,8 @@
 import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 
 const LoginMain = () => {
+	const navigate = useNavigate();
 	return (
 		<main className='w-full'>
 			<section className='flex flex-col gap-10 px-7'>
@@ -16,15 +18,11 @@ const LoginMain = () => {
 					size={"base"}
 					full={true}
 					version={"normal"}
+					onClick={() => navigate("/signup1")}
 				>
 					Create Account
 				</Button>
-				{/* <button className='bg-neutral-50 w-full rounded-5xl shadow-1 backdrop-blur-xl hover:bg-neutral-200 font-bold leading-normal text-base flex items-center justify-center gap-2.5'>
-							<a href='./create-account-step-1.html' className='px-6 py-2'>
-								Create account
-							</a>
-						</button> */}
-				{/* </div> */}
+
 				<div className='flex items-center justify-center gap-1 self-stretch'>
 					<hr className='w-full border-neutral-700' />
 					<span className='text-center text-neutral-50 text-base leading-normal'>

@@ -1,19 +1,20 @@
+import { Link } from "react-router-dom";
 import Tweet from "../components/Tweet";
 
 const HomeFeed = () => {
 	const componentsArray = Array.from({ length: 10 }, (_, index) => (
-		<Tweet key={index} /> // Make sure to provide a unique key
+		<Tweet key={index} />
 	));
 	return (
 		<div className='bg-neutral-1000 text-neutral-50 font-inter w-full min-h-screen'>
 			<header className='px-4 py-3 w-full flex items-center justify-between'>
-				<a href='../user-profile/'>
+				<Link to={"/profile"}>
 					<img
 						src='/user_avatar.png'
 						alt='UserAvatar'
 						className='w-9 h-9 shrink-0 rounded-full'
 					/>
-				</a>
+				</Link>
 				<div className='flex items-end'>
 					<svg
 						width={42}
@@ -61,24 +62,21 @@ const HomeFeed = () => {
 				{/* Intentionally kept this empty */}
 				<div />
 			</header>
-			{componentsArray}
 			<section className='w-full pt-5 border-t border-neutral-700'>
 				<div className='w-full flex items-center justify-center text-neutral-50 gap-40 shrink-0 border-b border-neutral-700'>
 					<div className='pb-3 border-blue-default border-b-2'>For you</div>
 					<div className='pb-3'>Following</div>
 				</div>
 			</section>
+			{componentsArray}
 			<footer className='fixed bottom-0 left-0 w-full'>
 				<div className='flex justify-end mb-3 items-center gap-1 mr-5'>
-					<div className='px-8 py-3 bg-searchbar-fill rounded-5xl'>
+					{/* <div className='px-8 py-3 bg-searchbar-fill rounded-5xl'>
 						Copied to clipboard
-					</div>
-					<a
-						href='../compose-tweet/'
-						className='bg-blue-default p-4 rounded-full'
-					>
+					</div> */}
+					<Link to={"/tweet"} className='bg-blue-default p-4 rounded-full'>
 						<img src='/Add.svg' alt='' />
-					</a>
+					</Link>
 				</div>
 				<div className='bg-neutral-1000 flex gap-10 items-center justify-center px-6 py-5'>
 					<img src='/homeFill.svg' alt='Home' />
