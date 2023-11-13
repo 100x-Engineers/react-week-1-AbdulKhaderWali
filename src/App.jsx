@@ -1,5 +1,29 @@
+import { useState } from "react";
+import Login from "./pages/Login";
+import Signup1 from "./pages/signup/step-1";
+import { UserProvider } from "./context/UserContext";
+import Signup2 from "./pages/signup/step-2";
+import Signup3 from "./pages/signup/step-3";
+import Signup4 from "./pages/signup/step-4";
+import ProfilePage from "./pages/user-profile/ProfilePage";
+import EditProfile from "./pages/user-profile/EditProfile";
+import HomeFeed from "./pages/HomeFeed";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	// return <div>{isLoggedIn ? <Tweet /> : <Login />}</div>;
+	return (
+		<UserProvider>
+			<Login />
+			{/* <Signup1 /> */}
+			{/* <Signup2 />
+			<Signup3 />
+			<Signup4 />
+			<ProfilePage />
+			<EditProfile />
+			<HomeFeed /> */}
+		</UserProvider>
+	);
 }
 
 export default App;
